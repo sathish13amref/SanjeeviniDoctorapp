@@ -1,0 +1,12 @@
+<?php
+
+ $databaseHost = "localhost"; 
+ $databaseUser = "fkwcci_myadmin";
+ $databasePassword = "globe123";
+ $databaseName = "fkwcci_medical";
+        
+      $con=mysql_connect($databaseHost ,$databaseUser ,$databasePassword )or die ('Connection Error');
+      mysql_select_db("employee",$con) or die ('Database Error');
+
+
+?>

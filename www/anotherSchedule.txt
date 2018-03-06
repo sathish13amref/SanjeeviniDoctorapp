@@ -1,0 +1,35 @@
+<?php
+	define('DB_HOST', 'localhost');
+	define('DB_NAME', 'fkwcci_medical');
+	define('DB_USER','fkwcci_myadmin'); 
+	define('DB_PASSWORD','globe123');
+	$con= mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) or die("Failed to connect to MySQL: " . mysql_error());
+//	$db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error()); 
+	
+		$time_from=array($_GET['time_from']);
+	
+	//	$comma_separated = "'".implode("','", $time_from)."'";
+		
+	//	echo $comma_separated;
+
+		for($i=0; $i >= $time_from; $i++)
+		{
+			$query = "INSERT INTO doctors (time_from) VALUES ('$time_from[$i]')";
+			$data = mysqli_query ($con,$query)or die( mysqli_error());
+			if($data)
+		{
+			echo "YOUR REGISTRATION IS COMPLETED..."; 
+		}
+		}
+		/*
+		$query = "INSERT INTO new_existing_patient (Name,age,sex,Phone) VALUES ('$Name','$age','$sex','$Phone')"; 
+		$data = mysqli_query ($con,$query)or die( mysqli_error());
+		
+	/*    $query = "INSERT INTO new_existing_patient (Name,age,sex,Phone) VALUES ('$Name','$age','$sex','$Phone')"; 
+		$data = mysqli_query ($con,$query)or die(mysqli_error());
+		if($data)
+		{
+			echo "YOUR REGISTRATION IS COMPLETED..."; 
+		}
+*/
+?>
